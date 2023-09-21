@@ -1,0 +1,46 @@
+#calc-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 5px;
+    width: max-content;
+}
+
+#calc-form .form-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 5px;
+}
+#calc-form .form-row:last-child {
+    justify-content: flex-end;
+}
+
+#calc-form select,
+#calc-form input[type|=submit] {
+    cursor: pointer;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+}
+#results div {
+    border: 1px solid #eee;
+    padding: 5px;
+    cursor: pointer;
+    opacity: .8;
+    transition: opacity .1s;
+}
+#results div:hover {
+    opacity: 1;
+}
+#results div.even {
+    background-color: #fff;
+}
+#results div.odd {
+    background-color: #ececec;
+}
