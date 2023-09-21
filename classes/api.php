@@ -167,7 +167,7 @@ class TC {
             return json_encode(
                 ( object ) [
                     'coefficient'  => 0.0,
-                    'date'         => '0000-00-00',
+                    'date'         => date( 'Y-m-d', time() ),
                     'error'        => 'Route not found'
                 ]
             );
