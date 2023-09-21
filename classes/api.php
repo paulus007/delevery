@@ -147,7 +147,7 @@ class TC {
                `per`.`name` AS `periodicity`,
                `p`.`periodicity_value` AS `day_of_periodicity`,
                `p`.`delivery_time`,
-               `p`.`basic_coeff_per_kg`
+               `p`.`coeff_per_kg`
         FROM `price` AS `p`
         JOIN `company` AS `c` ON `c`.`id` = `p`.`company_id`
                              AND `c`.`id` = {$this->id}
@@ -199,7 +199,7 @@ class TC {
         return json_encode(
             ( object ) [
                 // Для плавного роста зависимости коэффициента стоимости от веса используем показательную функцию
-                'coefficient' => round( $weight ** $params->basic_coeff_per_kg, 4 ),
+                'coefficient' => round( $weight ** $params->coeff_per_kg, 4 ),
                 'date'        => date( 'Y-m-d', $date ),
                 'error'       => ''
             ]
